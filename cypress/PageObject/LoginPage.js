@@ -1,14 +1,12 @@
-// Import required libraries
 const loginData1 = require('D:/CypressProject/cypress/fixtures/login.json');
-require('cypress-xpath');
 
 class LoginPage {
   // Locators
   elements = {
-    signinButton: () => cy.xpath("//a[text()='Sign In']"),
-    usernameField: () => cy.xpath("//input[@name='email']"),
-    passwordField: () => cy.xpath("//input[@name='password']"),
-    loginButton: () => cy.xpath("//button[text()='Login']"),
+    signinButton: () => cy.get("a[class='item']"), // CSS selector for Sign In button
+    usernameField: () => cy.get("input[placeholder='Email address']"), // CSS selector for username field
+    passwordField: () => cy.get("input[placeholder='Password']"), // CSS selector for password field
+    loginButton: () => cy.get('.fluid.ui.teal.button'), // CSS selector for Login button
   };
 
   // Login action
@@ -22,16 +20,6 @@ class LoginPage {
   // Login steps for the first dataset
   loginSteps() {
     loginData1.forEach((testCase) => {
-      if (testCase.TestCase === "LoginData") {
-        const { Email: email, Password: password } = testCase.Data;
-        this.loginAction(email, password);
-      }
-    });
-  }
-
-  // Login steps for the second dataset
-  loginSteps2() {
-    loginData2.forEach((testCase) => {
       if (testCase.TestCase === "LoginData") {
         const { Email: email, Password: password } = testCase.Data;
         this.loginAction(email, password);
