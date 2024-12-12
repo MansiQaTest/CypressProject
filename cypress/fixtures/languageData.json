@@ -1,0 +1,14 @@
+{
+    "addLanguage": {
+      "language": "Spanish",
+      "languageLevel": "Basic"
+    },
+    "updateLanguage": {
+      "updatedLanguage": "French",
+      "updatedLanguageLevel": "Fluent"
+    },
+    "deleteLanguage": {
+      "languageToDelete": "French"
+    }
+  }
+  
